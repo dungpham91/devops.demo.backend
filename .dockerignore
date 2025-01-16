@@ -1,0 +1,22 @@
+# Ignore node_modules folder (we'll install dependencies inside the container)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment file (.env) for security reasons
+.env
+
+# Ignore the git folder (no need to include Git data in Docker images)
+.git/
+
+# Ignore the Dockerfile and docker-compose files in the context folder (if not needed inside the container)
+Dockerfile
+docker-compose.yml
+
+# Ignore package-lock.json (if you don't want to copy it into the image)
+package-lock.json
+
+# Ignore other unnecessary files
+*.md
+.github

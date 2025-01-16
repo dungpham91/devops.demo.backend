@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Log files
+*.log
+
+# Sensitive environment and configuration files
+.env
+*.env
+
+# IDE or editor files
+.vscode/
+.idea/
+
+# Other installation directory without git integration
+*.swp
+*.swo
+jest-results/

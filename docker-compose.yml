@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:17.2
+    restart: always
+    shm_size: 128mb
+    container_name: postgres-container
+    env_file: .env.local
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  backend:
+    build:
+      context: .
+    container_name: backend-container
+    env_file: .env.local
+    ports:
+      - "4000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+    driver: local
