@@ -1,6 +1,4 @@
-# Repository contains Node.js code using Express library to make Backend app for DevOps flow demo.
-
-# Repository of Helm charts deployed to the EKS cluster in the demo DevOps flow
+# Repository contains Node.js code using Express library to make Backend app for DevOps flow demo
 
 Hi,
 
